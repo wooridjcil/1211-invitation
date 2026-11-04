@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>사업보고회 초대장</title>
+
+<style>
+
+body{
+  margin:0;
+  background:#fff;
+}
+
+.wrap{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+/* 화면에는 안 보이지만 보이스오버는 읽는 글씨 */
+.voice-text{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* 오디오 플레이어 숨김 */
+audio{
+  display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <img src="card1.jpg" alt="2026년 사업보고회 초대장">
+
+  <div class="voice-text">
+2026년 사업보고회 
+우리동작, We On
+
+함께 나눈 온기(溫)와 희망의 불빛(ON)으로 
+2026년을 알차게 채웠습니다.
+소중한 인연으로 곁을 지켜주신 여러분이 계셨기에
+우리동작과 사단법인 윌은 늘 밝게 빛날 수 있었습니다.
+늘 곁을 지켜주신 고마운 분들과 함께
+성장의 순간을 나누고자 합니다.
+귀한 걸음으로 자리를 함께해주시면 감사하겠습니다.
+
+신청 QR 또는 구글폼 링크
+       전화 접수 가능 (02-812-2536)
+
+참석이 가능하신 분들은 사전에 신청바랍니다.
+
+주최, 주관:우리동작장애인자립생활센터, 사단법인 윌
+
+  </div>
+
+</div>
+
+<audio id="bgm" muted autoplay playsinline>
+  <source src="voice.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+window.addEventListener('load', async function () {
+
+  const audio = document.getElementById('bgm');
+
+  try {
+
+    await audio.play();
+
+    setTimeout(() => {
+
+      audio.muted = false;
+
+      audio.volume = 1.0;
+
+    }, 300);
+
+  } catch (e) {
+
+    console.log("자동재생 차단");
+
+    document.body.addEventListener('click', async function () {
+
+      audio.muted = false;
+
+      audio.volume = 1.0;
+
+      await audio.play();
+
+    }, { once:true });
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
