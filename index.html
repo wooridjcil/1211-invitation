@@ -36,29 +36,29 @@ img {
 }
 
 /* 구글폼 신청 버튼 */
-apply-button {
+a.apply-button,
+a.apply-button:visited {
   display: block;
   width: 85%;
   max-width: 350px;
-  margin: 10px auto 10px;
+  margin: 10px auto;
   padding: 14px 12px;
+  box-sizing: border-box;
   background-color: #BFCAB6;
   color: #263B2A;
   font-size: 20px;
   font-weight: bold;
+  font-family: sans-serif;
   text-align: center;
   text-decoration: none;
   border-radius: 12px;
-  box-sizing: border-box;
-  transition: background-color 0.2s;
 }
 
-.apply-button:hover,
-.apply-button:focus-visible {
+a.apply-button:hover {
   background-color: #A5B69B;
 }
 
-.apply-button:focus-visible {
+a.apply-button:focus-visible {
   outline: 3px solid #36563C;
   outline-offset: 3px;
 }
